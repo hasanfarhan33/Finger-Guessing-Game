@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finger Guessing Game</title>
+</head>
+<body>
+    <p>How many fingers am I holding up?</p>
+    <input type="text" id="answer">
+    <button id="submitButton">Submit</button>
+</body>
+
+<!-- Javascript stuff here -->
+<script>
+ 
+    document.getElementById("submitButton").onclick = function() {
+        var fingerNumber = Math.floor(Math.random() * 5) + 1; 
+        console.log(fingerNumber);
+        
+        if(document.getElementById("answer").value == fingerNumber) {
+            alert("Great, you got that right.");
+        } 
+        else if(document.getElementById("answer").value == "")
+        {
+            alert("You're not even trying, why are you even playing this game?");
+        }
+        else {
+            alert("Nope, you got that wrong. I am actually holding " + fingerNumber + " fingers."); 
+        }
+    }
+</script>
+
+
+</html>
